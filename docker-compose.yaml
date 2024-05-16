@@ -1,0 +1,25 @@
+volumes:
+  papermc_data:
+    name: papermc_data
+
+services:
+  papermc:
+    image: itzg/minecraft-server
+    enviropment:
+      EULA: "true"
+      TYPE: CURSEFORGE
+      CF_PAGE_URL: https://www.curseforge.com/minecraft/modpacks/secret-society-3-0/download/5346419
+      CF_SLUG: secret-society-3-0
+      VERSION: 1.20.6 
+      CONSOLE: 'true'
+      ONLINE_MODE: 'false'
+
+    continer_name: papermc
+    restart: always
+    tty: true
+    stdin_open: true
+    volumes:
+      - papermc_data:/data
+
+    ports:
+      - "25565:25565"
