@@ -5,16 +5,18 @@ volumes:
 services:
   papermc:
     image: itzg/minecraft-server
-    enviropment:
+    environment:
       EULA: "true"
-      TYPE: CURSEFORGE
-      CF_PAGE_URL: https://www.curseforge.com/minecraft/modpacks/secret-society-3-0/download/5346419
-      CF_SLUG: secret-society-3-0
-      VERSION: 1.20.6 
+      TYPE: AUTO_CURSEFORGE
+      CF_PAGE_URL: https://www.curseforge.com/minecraft/modpacks/cursed-walking-a-modern-zombie-apocalypse/files/5339312
+      CF_SLUG: cursed-walking-a-modern-zombie-apocalypse
+      CF_FILE_ID: 5339312
+      CF_API_KEY: ${API_KEY}
+      VERSION: 1.20.1
       CONSOLE: 'true'
       ONLINE_MODE: 'false'
 
-    continer_name: papermc
+    container_name: papermc
     restart: always
     tty: true
     stdin_open: true
