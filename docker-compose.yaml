@@ -4,10 +4,11 @@ volumes:
 
 services:
   papermc:
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server:java17
     environment:
+      MEMORY: 750m
       EULA: "true"
-      TYPE: AUTO_CURSEFORGE
+      TYPE: FORGE
       CF_PAGE_URL: https://www.curseforge.com/minecraft/modpacks/cursed-walking-a-modern-zombie-apocalypse/files/5339312
       CF_SLUG: cursed-walking-a-modern-zombie-apocalypse
       CF_FILE_ID: 5339312
